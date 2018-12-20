@@ -41,31 +41,8 @@ module.exports = {
     htmlWebpackPluginList.push(
       new HtmlWebpackPlugin({
         inject: false,
-        template: path.resolve(__dirname, 'ClientApp/indexTemplate.html'),
-        filename: path.resolve(__dirname, 'index.html'),
-        chunks: ['index'],
-        // 跳過那些模塊
-        // excludeChunks: [],
-        HtmlWebpackPluginOverride: true,
-        // hash:true,//防止缓存
-        outputFile: {
-          vendor: 'wwwroot/vendor/dll.vendor.js',
-          isProd: isProd,
-          port: module.exports.devServerPort,
-        },
-        minify: minify,
-        // 啟用手動排序
-        chunksSortMode: 'manual'
-        // 跟著HtmlWebpackHarddiskPlugin套件
-        // alwaysWriteToDisk: true
-      })
-    )
-
-    htmlWebpackPluginList.push(
-      new HtmlWebpackPlugin({
-        inject: false,
         template: path.resolve(__dirname, 'ClientApp/ejs/index_2/index_2.ejs'),
-        filename: path.resolve(__dirname, 'index_2.html'),
+        filename: path.resolve(__dirname, 'index.html'),
         chunks: ['index'],
         HtmlWebpackPluginOverride: true,
         // hash:true,//防止缓存
