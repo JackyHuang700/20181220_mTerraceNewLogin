@@ -120,3 +120,39 @@ html, body{
 .borr-10{
   border-radius: 10px;
 }
+
+
+.animFadeInRight{
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-name: fadeInRight;
+  @keyframes fadeInRight {
+      0% {
+          // opacity: 0;
+          transform: translateX(100%);
+      }
+  
+      100% {
+          // opacity: 1;
+          transform: translateX(-7%);
+      }
+  }
+}
+
+.animFadeIn{
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-name: fadeIn;
+  
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+  }
+}
