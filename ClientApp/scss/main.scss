@@ -1,5 +1,122 @@
-$color: #faa;
+$mq1200: 1200px;
+$mq1023: 1023px;
+$mq767: 767px;
+$mq480: 480px;
 
-#app{
-  color: $color;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #7f7f7f;
+  color: #fff;
+}
+
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-height: 100px;
+  height: 35%;
+  min-height: 358px;
+  width: 95%;
+  max-width: 1200px;
+  background-color: #10395d;
+  padding: 10px 15px;
+  font-family: 'Roboto', sans-serif;
+
+  .loginInfo{
+      width: 46%;
+      overflow: hidden;
+      padding-top: 80px;
+      padding-left: 90px;
+      clear: both;
+      // border: 1px solid blue;
+
+      .eletronic{
+        float: left;
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+        // border: 1px solid red;
+
+        img{
+          width: 100px;
+        }
+      }
+      .font{
+        float: left;
+        width: 70%;
+        // border: 1px solid yellow;
+        font-size: 20px;
+
+        .logo{
+          max-width: 100%;
+        }
+
+
+        p{
+          &:nth-of-type(1){
+            font-size: 40px;
+            letter-spacing: 5px;
+          
+             font-weight: 900;
+
+             &::after{
+               content: '';
+               display: block;
+              margin-top: 20px;
+              width: 100%;
+              height: 6px;
+              background-color: #f3961a;
+              transform: skewX(-20deg);
+            }
+           }
+           
+
+          &:nth-of-type(2){
+            padding-top: 20px;
+          }
+          
+        }
+
+        .info{
+          padding-top: 25px;
+        }
+
+      }
+  }
+  .loginForm{
+    position: absolute;
+    top: -24%;
+    left: 55%;
+    transform: translate(-7%, 0%);
+
+
+    min-height: 150%;
+    background-color: #fff;
+    color: black;
+    z-index: 1;
+    padding: 10px 15px;
+    box-shadow: 0px 10px 21px 5px rgba(0, 0, 0, 0.4);
+
+    >h1{
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+
+
+// 
+.borr-10{
+  border-radius: 10px;
 }
