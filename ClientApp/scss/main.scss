@@ -2,6 +2,8 @@ $mq1200: 1200px;
 $mq1023: 1023px;
 $mq767: 767px;
 $mq480: 480px;
+$templateColor: #10395d;
+$templateColor2: #f3961a;
 
 *{
   box-sizing: border-box;
@@ -17,6 +19,33 @@ html, body{
   color: #fff;
 }
 
+//
+.bgc{
+ 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  &::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: .9;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//
 .login{
   position: absolute;
   top: 50%;
@@ -28,9 +57,10 @@ html, body{
   max-height: 358px;
   width: 95%;
   max-width: 1200px;
-  background-color: #10395d;
+  background-color: $templateColor;
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
+  box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.2);
 
   .loginInfo{
       width: 46%;
@@ -75,8 +105,22 @@ html, body{
               margin-top: 20px;
               width: 100%;
               height: 6px;
-              background-color: #f3961a;
+              background-color: $templateColor2;
               transform: skewX(-20deg);
+              animation-duration: 2s;
+              animation-iteration-count: 1;
+              animation-timing-function: ease;
+              animation-name: widthStyle;
+              
+              @keyframes widthStyle {
+                0% {
+                    width: 0;
+                }
+
+                100% {
+                    width: 100%;
+                }
+              }
             }
            }
            
@@ -109,8 +153,109 @@ html, body{
 
     >h1{
       text-align: center;
+      padding-top: 20px;
       padding-bottom: 10px;
+      color: $templateColor;
+      font-weight: 900;
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      
+
+      &::after{
+        content: '';
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: $templateColor2;
+        margin-top: 5px;
+      }
     }
+
+
+
+    .box {
+      width: 400px;
+      // background-color: #fff;
+      padding: 40px;
+      border: 1px solid rgca(0, 0, 0, 0.1);
+      // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+      // h2 {
+      //   margin: 0 auto 40px;
+      //   padding: 0;
+      //   color: $templateColor;
+      // }
+
+      input {
+        padding: 10px 0;
+        margin-bottom: 30px;
+      }
+
+      textarea {
+        height: 80px;
+        padding: 10px 0;
+        margin-bottom: 40px;
+      }
+
+      input,
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #eee;
+        transition-property: border-bottom, top, left, color;
+        transition-duration: .4s;
+        transition-timing-function: ease;
+
+
+        // 移動
+        // 搭配 required tag
+        // &:valid ~ label,
+        &:focus ~ label {
+          top: -12px;
+          left: 0;
+          color: $templateColor;
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        // &:valid,
+        &:focus {
+          border-bottom: 2px solid $templateColor;
+        }
+      }
+
+      [type='submit'] {
+        border: none;
+        cursor: pointer;
+        background-color: $templateColor;
+        color: #fff;
+        margin-bottom: 0;
+        width: 100%;
+        padding: 10px 0;
+        letter-spacing: 5px;
+        font-weight: 700;
+      }
+
+      form {
+        div {
+          position: relative;
+
+          label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #999;
+            transition: top 0.2s ease-in-out;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
   }
 }
 
@@ -119,6 +264,9 @@ html, body{
 // 
 .borr-10{
   border-radius: 10px;
+}
+.borr-5{
+  border-radius: 5px;
 }
 
 
