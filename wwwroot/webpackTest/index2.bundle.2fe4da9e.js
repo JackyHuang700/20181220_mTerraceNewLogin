@@ -140,4 +140,4 @@ console.log(Object(_multiFunc__WEBPACK_IMPORTED_MODULE_1__[/* square */ "b"])(51
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=index2.bundle.d8208d7e.js.map
+//# sourceMappingURL=index2.bundle.2fe4da9e.js.map
