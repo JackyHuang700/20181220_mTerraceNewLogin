@@ -7,14 +7,18 @@ $templateColor2: #f3961a;
 
 //
 $eletronicWidth: 30%;
+$eletronicWidth2: 43%;
+$eletronicWidth3: 30%;
+$eletronicWidth4: 36%;
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
   position: relative;
@@ -23,23 +27,22 @@ html, body{
 }
 
 //
-.bgc{
- 
+.bgc {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  
-  &::after{
-    content: '';
+
+  &::after {
+    content: "";
     display: block;
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: .9;
+    opacity: 0.9;
     background-color: rgba(0, 0, 0, 0.65);
   }
 
-  video{
+  video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -47,14 +50,14 @@ html, body{
     width: 100%;
     // height: 100%;
 
-    @media screen and (max-width: 2048px){
+    @media screen and (max-width: 2048px) {
       width: 177%;
     }
   }
 }
 
 //
-.login{
+.login.login {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,100 +70,170 @@ html, body{
   max-width: 985px;
   background-color: $templateColor;
   // padding: 10px 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.13);
 
-  .loginInfo{
-      width: 57%;
-      overflow: hidden;
-      padding-top: 80px;
-      padding-left: 121px;
-      clear: both;
-      // border: 1px solid blue;
+  @media screen and (max-width: $mq1023) {
+    min-height: auto;
+    max-height: none;
+    height: 100%;
+    transform: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
 
-      .eletronic{
-        float: left;
-        width: $eletronicWidth;
-        text-align: right;
-        padding-right: 40px;
-        // border: 1px solid red;
+  .loginInfo {
+    width: 57%;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-left: 121px;
+    clear: both;
+    // border: 1px solid blue;
+    margin-top: 20px;
 
-        img{
-          width: 90px;
-          height: 70px;
+    @media screen and (max-width: $mq1023) {
+      width: 100%;
+      // text-align: center;
+      padding-top: 0;
+      padding-left: 0;
+      margin-top: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 433px;
+    }
+
+    @media screen and (max-width: $mq480) {
+      min-width: 344px;
+    }
+
+    .eletronic {
+      float: left;
+      width: $eletronicWidth;
+      text-align: right;
+      padding-right: 40px;
+      // border: 1px solid red;
+
+      @media screen and (max-width: $mq1023) {
+        width: $eletronicWidth2;
+      }
+      @media screen and (max-width: $mq767){
+        width: $eletronicWidth3;
+      }
+      @media screen and (max-width: $mq480){
+        width: $eletronicWidth4;
+        padding-right: 30px;
+      }
+
+      img {
+        $imgRate: 0.7777777777;
+        width: 90px;
+        height: 70px;
+
+        @media screen and (max-width: $mq480){
+          width: 70px;
+          height: #{70px * $imgRate};
         }
       }
-      .font{
-        float: left;
-        width: (100% - $eletronicWidth);
-        // border: 1px solid yellow;
-        font-size: 18px;
+    }
+    .font {
+      float: left;
+      width: (100% - $eletronicWidth);
+      // border: 1px solid yellow;
+      font-size: 18px;
 
-        .logo{
-          max-width: 100%;
+      @media screen and (max-width: $mq1023) {
+        width: (100% - $eletronicWidth2);
+      }
+      @media screen and (max-width: $mq767){
+        width: (100% - $eletronicWidth3);
+      }
+      @media screen and (max-width: $mq480){
+        width: (100% - $eletronicWidth4);
+      }
 
-          >img{
-            width: 75px;
-          }
+      .logo {
+        max-width: 100%;
+
+        > img {
+          width: 75px;
         }
+      }
 
+      p {
+        &:nth-of-type(1) {
+          font-size: 40px;
+          letter-spacing: 2px;
+          font-weight: 900;
+          display: block;
+          margin-right: auto;
+          width: 275px;
 
-        p{
-          &:nth-of-type(1){
-            font-size: 40px;
-            letter-spacing: 2px;
-            font-weight: 900;
+          @media screen and (max-width: $mq480){
+            font-size: 30px;
+            width: 80%;
+          }
+
+          &::after {
+            content: "";
             display: block;
-            margin-right: auto;
-            width: 275px;
+            margin-top: 30px;
+            width: 100%;
+            height: 6px;
+            background-color: $templateColor2;
+            transform: skewX(-20deg);
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-name: widthStyle;
 
-             &::after{
-               content: '';
-               display: block;
-              margin-top: 30px;
-              width: 100%;
-              height: 6px;
-              background-color: $templateColor2;
-              transform: skewX(-20deg);
-              animation-duration: 2s;
-              animation-iteration-count: 1;
-              animation-timing-function: ease;
-              animation-name: widthStyle;
-              
-              @keyframes widthStyle {
-                0% {
-                    width: 0;
-                }
+            @keyframes widthStyle {
+              0% {
+                width: 0;
+              }
 
-                100% {
-                    width: 100%;
-                }
+              100% {
+                width: 100%;
               }
             }
-           }
-           
 
-          &:nth-of-type(2){
-            padding-top: 40px;
+            @media screen and (max-width: $mq1023) {
+              margin-top: 0;
+            }
           }
-          &:nth-of-type(3){
-            padding-top: 1px;
-          }
-          
         }
 
-        .info{
-          padding-top: 60px;
-        }
+        &:nth-of-type(2) {
+          padding-top: 40px;
 
+          @media screen and (max-width: $mq1023) {
+            // margin-top: 378px;
+            margin-top: 340px;
+          }
+
+          @media screen and (max-width: $mq480){
+            margin-top: 350px;
+          }
+        }
+        &:nth-of-type(3) {
+          padding-top: 1px;
+        }
       }
+
+      .info {
+        padding-top: 60px;
+      }
+    }
   }
-  .loginForm{
+  .loginForm {
     position: absolute;
     top: -4%;
     left: 61%;
     transform: translate(-7%, 0%);
-
 
     min-height: 108%;
     min-width: 360px;
@@ -170,7 +243,23 @@ html, body{
     padding: 0 15px;
     box-shadow: 0px 10px 21px 5px rgba(0, 0, 0, 0.4);
 
-    >h1{
+    @media screen and (max-width: $mq1023) {
+      top: 47%;
+      // top: 48%;
+      // top: 46%;
+      // top: 33%;
+      min-height: auto;
+      min-width: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media screen and (max-width: $mq480) {
+      // width: 75%;
+      width: 85%;
+    }
+
+    > h1 {
       text-align: left;
       padding-top: 74px;
       padding-bottom: 10px;
@@ -182,7 +271,10 @@ html, body{
       display: block;
       margin: 0 auto;
       width: 100%;
-      
+
+      @media screen and (max-width: $mq1023) {
+        padding-top: 37px;
+      }
 
       // &::after{
       //   content: '';
@@ -194,13 +286,11 @@ html, body{
       // }
     }
 
-
-
     .box {
       width: 400px;
       // background-color: #fff;
       padding: 40px;
-      border: 1px solid rgca(0, 0, 0, 0.1);
+      // border: 1px solid rgba(0, 0, 0, 0.1);
       // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
       // h2 {
@@ -208,6 +298,11 @@ html, body{
       //   padding: 0;
       //   color: $templateColor;
       // }
+
+      @media screen and (max-width: $mq480) {
+        padding: 40px 10px;
+        width: 100%;
+      }
 
       input {
         padding: 10px 0;
@@ -229,9 +324,8 @@ html, body{
         border: none;
         border-bottom: 2px solid #eee;
         transition-property: border-bottom, top, left, color;
-        transition-duration: .4s;
+        transition-duration: 0.4s;
         transition-timing-function: ease;
-
 
         // 移動
         // 搭配 required tag
@@ -250,7 +344,7 @@ html, body{
         }
       }
 
-      [type='submit'] {
+      [type="submit"] {
         border: none;
         cursor: pointer;
         background-color: $templateColor;
@@ -277,52 +371,51 @@ html, body{
         }
       }
     }
-
   }
 }
 
+.borr-10 {
+  border-radius: 10px;
+}
+.borr-5 {
+  border-radius: 5px;
+}
 
-
-// 
-// .borr-10{
-//   border-radius: 10px;
-// }
-// .borr-5{
-//   border-radius: 5px;
-// }
-
-
-.animFadeInRight{
+.animFadeInRight {
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-name: fadeInRight;
   @keyframes fadeInRight {
-      0% {
-          // opacity: 0;
-          transform: translateX(100%);
-      }
-  
-      100% {
-          // opacity: 1;
-          transform: translateX(-7%);
-      }
+    0% {
+      // opacity: 0;
+      transform: translateX(100%);
+    }
+
+    100% {
+      // opacity: 1;
+      transform: translateX(-7%);
+    }
   }
+
+  // @media screen and (max-width: $mq1023){
+
+  // }
 }
 
-.animFadeIn{
+.animFadeIn {
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-name: fadeIn;
-  
+
   @keyframes fadeIn {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
 
     100% {
-        opacity: 1;
+      opacity: 1;
     }
   }
 }
