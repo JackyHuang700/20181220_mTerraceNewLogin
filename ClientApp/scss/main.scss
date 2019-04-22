@@ -7,8 +7,8 @@ $templateColor2: #f3961a;
 
 //
 $eletronicWidth: 30%;
-$eletronicWidth2: 43%;
-$eletronicWidth3: 30%;
+$eletronicWidth2: 35%;
+$eletronicWidth3: 33%;
 $eletronicWidth4: 36%;
 
 * {
@@ -329,7 +329,8 @@ body {
 
         // 移動
         // 搭配 required tag
-        // &:valid ~ label,
+        // &:invalid ~ label, // 若網頁會自動填值，要開啟這個
+        &:valid ~ label,
         &:focus ~ label {
           top: -12px;
           left: 0;
@@ -384,8 +385,14 @@ body {
 .animFadeInRight {
   animation-duration: 2s;
   animation-iteration-count: 1;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
   animation-name: fadeInRight;
+  @media screen and (max-width: $mq1023){
+    animation-duration: 1s;
+    animation-name: eedf346c;
+  }
+
+  
   @keyframes fadeInRight {
     0% {
       // opacity: 0;
@@ -397,10 +404,12 @@ body {
       transform: translateX(-7%);
     }
   }
-
-  // @media screen and (max-width: $mq1023){
-
-  // }
+  @keyframes eedf346c{
+    0%{
+      opacity: 0;
+      transform: translate(-50%, -15%);
+    }
+  }
 }
 
 .animFadeIn {
