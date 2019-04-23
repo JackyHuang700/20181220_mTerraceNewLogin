@@ -75,3 +75,11 @@ var _ = require('lodash');
 // console.log(y); // 2
 // console.log(z); // { a: 3, b: 4 }
 // [5, 6].map(n => console.log(n));
+
+
+window.addEventListener('keydown', function (e) {
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    document.getElementById('login').click()
+  }
+})
