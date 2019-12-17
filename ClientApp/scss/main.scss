@@ -11,6 +11,10 @@ $eletronicWidth2: 35%;
 $eletronicWidth3: 33%;
 $eletronicWidth4: 36%;
 
+// -- 標題距離 --
+$loginInfoMargin: 25px;
+$loginFormMargin: #{ 95px + $loginInfoMargin };
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -101,9 +105,9 @@ body {
       padding-left: 0;
       margin-top: 0;
       position: absolute;
-      top: 50%;
+      top: $loginInfoMargin;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 0%);
       max-width: 433px;
     }
 
@@ -244,14 +248,11 @@ body {
     box-shadow: 0px 10px 21px 5px rgba(0, 0, 0, 0.4);
 
     @media screen and (max-width: $mq1023) {
-      top: 47%;
-      // top: 48%;
-      // top: 46%;
-      // top: 33%;
+      top: $loginFormMargin;
       min-height: auto;
       min-width: auto;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, 0%);
     }
 
     @media screen and (max-width: $mq480) {
